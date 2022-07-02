@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CoreMLMnist" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gxN-kD-vTv">
+                                <rect key="frame" x="168.5" y="573" width="77" height="40"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Clear">
+                                            <attributes>
+                                                <font key="NSFont" size="22" name="Helvetica"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="clearBtnTappedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="L93-SC-aqw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BUX-db-0Zu">
+                                <rect key="frame" x="163" y="156" width="88" height="40"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Detect">
+                                            <attributes>
+                                                <font key="NSFont" size="22" name="Helvetica"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="detectBtnTappedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VzX-jr-TAo"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XcQ-1j-mew" customClass="DrawView" customModule="CoreMLMnist" customModuleProvider="target">
+                                <rect key="frame" x="87" y="213" width="240" height="252"/>
+                                <color key="backgroundColor" systemColor="labelColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="euY-jt-q1G"/>
+                                    <constraint firstAttribute="height" constant="252" id="y0U-6o-e3S"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dC1-hF-haG">
+                                <rect key="frame" x="169" y="495" width="76.5" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="XcQ-1j-mew" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7yu-ef-PMN"/>
+                            <constraint firstItem="dC1-hF-haG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BNW-z6-ALf"/>
+                            <constraint firstItem="BUX-db-0Zu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GhI-I4-4lu"/>
+                            <constraint firstItem="BUX-db-0Zu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="112" id="PyO-ag-StV"/>
+                            <constraint firstItem="gxN-kD-vTv" firstAttribute="top" secondItem="dC1-hF-haG" secondAttribute="bottom" constant="42" id="R4h-7H-Xu2"/>
+                            <constraint firstItem="gxN-kD-vTv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kUb-nV-4Zi"/>
+                            <constraint firstItem="dC1-hF-haG" firstAttribute="top" secondItem="XcQ-1j-mew" secondAttribute="bottom" constant="30" id="pzE-nH-Bzm"/>
+                            <constraint firstItem="XcQ-1j-mew" firstAttribute="top" secondItem="BUX-db-0Zu" secondAttribute="bottom" constant="17" id="z2j-9B-gEg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="clearBtn" destination="gxN-kD-vTv" id="1bK-SB-Q1B"/>
+                        <outlet property="drawView" destination="XcQ-1j-mew" id="zVp-5q-RPE"/>
+                        <outlet property="predictionLabel" destination="dC1-hF-haG" id="Ic1-Cy-NZ6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-39.130434782608695" y="-37.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
